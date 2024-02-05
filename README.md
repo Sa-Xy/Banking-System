@@ -16,6 +16,24 @@ This project consist of 3 classes:
 * Accounts: superclass
 * BankingSystem: main class
 
+## Inheritance
+The "SavingsAccount" class extends from "Account" class, which mean they share a similar methods like withdraw and deposit.
+```java
+class Account {
+    private String accountNumber;
+    private String accountHolder;
+    private String accounttype;
+    protected double balance;
+```
+``` java
+class SavingsAccount extends Account {
+    private double interestRate;
+
+    public SavingsAccount(String accountNumber, String accountHolder, String type, double balance, double interestRate) {
+        super(accountNumber, accountHolder, type, balance);
+        this.interestRate = interestRate;
+    }
+```
 ## Encapsulation
 * private: accessible within the same class and not visible to subclasses or other classes. We use private to ensure their the value can only be changed inside that class.
 ``` java
