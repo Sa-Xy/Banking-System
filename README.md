@@ -16,9 +16,34 @@ This project consist of 3 classes:
 * Accounts: superclass
 * BankingSystem: main class
 
-## Polymorphism
 ## Encapsulation
 * private: accessible within the same class and not visible to subclasses or other classes. We use private to ensure their the value can only be changed inside that class.
+``` java
+    private String accountNumber;
+    private String accountHolder;
+    private String accounttype;
+```
+* protected: we use 'protected double balance' variable here in "Account" class so that it is accessible to subclass "SavingsAccount"
+``` java
+    protected double balance;
+```
+
+## Polymorphism
+* Overriding Method: override the withdraw method in SavingsAccount class to applied a behavior "penalty" for when the withdrawal exceed the balance.
+``` java
+@Override
+    public void withdraw(double withdrewamount) {
+        System.out.println("Enter the amount you want to withdraw:");
+        withdrewamount = scanner.nextDouble();
+        if (withdrewamount  <= balance) {
+            super.withdraw(withdrewamount);
+        } else {
+            double penalty = withdrewamount * interestRate / 100;
+            balance -= penalty;
+            showAccount();
+        }
+    }
+```
 
 
 
