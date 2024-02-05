@@ -12,12 +12,13 @@ A simple banking system that can create two types of account; Savings and Regula
 
 ## Object-Oriented Features
 This project consist of 3 classes:
-* SavingsAccount
-* Accounts
-* BankingSystem(main)
+* SavingsAccount: subclass
+* Accounts: superclass
+* BankingSystem: main class
 
 ## Polymorphism
-
+## Encapsulation
+* private: accessible within the same class and not visible to subclasses or other classes. We use private to ensure their the value can only be changed inside that class.
 
 
 
